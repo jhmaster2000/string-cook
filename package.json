@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "string-cook",
+  "version": "1.0.0",
+  "description": "Cook (interpolate) raw template literal strings without unsafe dynamic code execution.",
+  "main": "main.js",
+  "types": "main.d.ts",
+  "scripts": {
+    "gentypes": "tsc -d --emitDeclarationOnly --allowJs -t es2022 --lib es2022 main.js"
+  },
+  "author": "jhmaster",
+  "license": "MIT",
+  "dependencies": {
+    "unraw": "^2.0.1"
+  }
+}
