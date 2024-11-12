@@ -3,7 +3,7 @@ import { unraw } from 'unraw';
 // Regexes
 const regex = {
     // Matches indexed access operators e.g. obj['foo'] or obj["foo"]
-    stringIndexedAccess: /\.?\[\s*(?<key>"(?:(?:[^"\r\n]|\\")*)"|'(?:(?:[^'\r\n]|\\')*)')\s*\]/g,
+    stringIndexedAccess: /\.?\[\s*(?<key>"(?:(?:[^"\r\n]|\\")*)(?<![^\\]\\)"|'(?:(?:[^'\r\n]|\\')*)(?<![^\\]\\)')\s*\]/g,
     // Matches array index access operators e.g. obj[0] or obj[97]
     arrayIndexAccess: /\.?\[\s*(?<key>\+?\s*(?:(?:\.(?:\d|(?<=\d)_(?=\d))+|(?:0|[1-9](?:\d|_\d)*)(?:\.(?:\d|(?<=\d)_(?=\d))*)?)(?:[Ee][+-]?(?:\d|(?<=\d)_(?=\d))+)?|0b(?:[01]|(?<=[01])_(?=[01]))+|0o(?:[0-7]|(?<=[0-7])_(?=[0-7]))+|0x(?:[\da-fA-F]|(?<=[\da-fA-F])_(?=[\da-fA-F]))+))\s*\]/g,
     // do not try to understand this regex, it just gets the job done
